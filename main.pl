@@ -65,12 +65,12 @@ sub alertlist {
 sub sendalert {
 	my $ip = shift;
 
-    print "Connecting to $ip to sound alarm\n" if $debug;
-    my $ua = LWP::UserAgent->new();
-    $ua->timeout(2);
-    my $req = POST( 'http://' . $ip . ':14252/', [ n => 'alert', ]);
-    my $content = $ua->request($req)->as_string;
-    print "returned content is:\n";
+	print "Connecting to $ip to sound alarm\n" if $debug;
+	my $ua = LWP::UserAgent->new();
+	$ua->timeout(2);
+	my $req = POST( 'http://' . $ip . ':14252/', [ n => 'alert', ]);
+	my $content = $ua->request($req)->as_string;
+	print "returned content is:\n";
 	print $content;
 }
 
